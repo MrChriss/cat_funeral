@@ -1,11 +1,8 @@
 <% provide(:title, 'Customers') %>
-
 <h1>All Customers</h1>
 
 <% @customers.each do |c| %>
   <p><%= c.name %></p>
   <p><%= c.email %></p>
-  <br><br><br>
+  <br><br>
 <% end %>
-
-<%= link_to 'Home', static_pages_home_path %>

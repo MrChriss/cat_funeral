@@ -8,8 +8,20 @@ class StaticPagesController < ApplicationController
   end
 
   def weather
+    @weather_now = weather_now
+    @weather_forecast = weather_forecast
   end
 
-  def reservation
+  private
+
+  def weather_now
+    o = {units: 'metric', APPID: '6e32f27d99669142cbfdd09d2be977a2' }
+    OpenWeather.current("Ljubljana, SI", o)
+  end
+
+  def weather_forecast
+    # for cnt: 1 --> 1 day
+    o = { cnt: 1, units: 'metric', APPID: '6e32f27d99669142cbfdd09d2be977a2' }
+    OpenWeather.forecast("Ljubljana, SI", o)
   end
 end

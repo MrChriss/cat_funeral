@@ -1,0 +1,19 @@
+<% provide(:title, 'Funeral') %>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @funeral.name %>
+</p>
+
+<p>
+  <strong>Start time:</strong>
+  <%= @funeral.start_time %>
+</p>
+
+<p>
+  <strong>End time:</strong>
+  <%= @funeral.end_time %>
+</p>
+
+<%= link_to 'Edit', edit_funeral_path(@funeral) %>

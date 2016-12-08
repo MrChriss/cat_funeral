@@ -1,0 +1,36 @@
+<% provide(:title, 'Funerals') %>
+<p id="notice"><%= notice %></p>
+
+<h1>Funerals</h1>
+<% if @funerals.empty? %>
+  <h3>There are currently no funerals reserved for <%= params[:date] %></h3>
+  You can <%= link_to 'create', new_funeral_path %> an appointment.
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Start time</th>
+        <th>End time</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @funerals.each do |funeral| %>
+        <tr>
+          <td><%= funeral.name %></td>
+          <td><%= funeral.start_time %></td>
+          <td><%= funeral.end_time %></td>
+          <td><%= link_to 'Show', funeral %></td>
+          <td><%= link_to 'Edit', edit_funeral_path(funeral) %></td>
+          <td><%= link_to 'Destroy', funeral, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+<br>
+
+<%= link_to 'New Funeral', new_funeral_path %>
+<% end %>

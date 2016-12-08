@@ -9,9 +9,6 @@ Rails.application.routes.draw do
   get '/calendar', to: 'static_pages#calendar'
   get '/weather', to: 'static_pages#weather'
 
-  get '/reservation', to: 'static_pages#reservation'
-  post '/reservation', to: 'static_pages#create_reservation'
-
-
+  resources :funerals
   resources :customers
 end
