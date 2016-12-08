@@ -1,14 +1,13 @@
 <% provide(:title, 'Weather') %>
-<h1>Weather</h1>
+<h1>Weather Today</h1>
 
 Weather: <%= @weather_now['weather'].first['description'] %><br>
 Temperature: <%= @weather_now['main']['temp'] %> C<br><br><br>
 
 
-
-<%= @weather_now %><br><br><br>
+<!-- <%= @weather_now %><br><br><br>
 <% @weather_forecast.each do |a| %>
   <% a.each do |b| %>
     <%= b %>
   <% end %>
-<% end %>
+<% end %> -->

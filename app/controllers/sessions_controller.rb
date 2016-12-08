@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       log_in customer
       redirect_to static_pages_home_path
     else
-      flash.now[:danger] = 'Invalid email/password combination'
+      flash.now[:notice] = 'Invalid email/password combination'
       render 'new'
     end
   end

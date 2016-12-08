@@ -6,6 +6,8 @@ class FuneralsController < ApplicationController
     @funerals = Funeral
       .where('start_time > ?', params[:date])
       .where('end_time < ?', Date.parse(params[:date]).end_of_day)
+
+    @weather = WeatherService.new(params[:date]).weather
   end
 
   def show
@@ -49,7 +51,7 @@ class FuneralsController < ApplicationController
     redirect_to :back
   end
 
-  
+
   def redirect_back
     redirect_to :back
   end
@@ -61,6 +63,6 @@ class FuneralsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def funeral_params
-      params.require(:funeral).permit(:name, :start_time, :end_time)
+      params.require(:funeral).permit(:name, :start_time)
     end
 end
