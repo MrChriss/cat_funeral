@@ -11,6 +11,7 @@ class CustomersController < ApplicationController
     @customer = Customer.new(customer_params)
     if @customer.save
       flash[:notice] = "#{@customer.name} created."
+      log_in(@customer)
       redirect_to root_path
     else
       render 'new'
