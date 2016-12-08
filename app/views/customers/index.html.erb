@@ -1,2 +1,8 @@
-<h1>Hello World!</h1>
-<p>Cat funeral app.</p>
+<% provide(:title, 'Customers') %>
+
+<h1>customers#index</h1>
+
+<% @customers.each do |c| %>
+  <p><%= c.name %></p>
+  <p><%= c.email %></p>
+<% end %>

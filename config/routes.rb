@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root 'customers#index'
-  get 'customers/index'
+  root 'static_pages#home'
+  get 'static_pages/home'
 
+  resources :customers
 end
