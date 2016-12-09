@@ -2,15 +2,18 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Funerals</h1>
-<%= params[:date].to_time.to_i %><br>
 
-Temperature:
-<%= @weather['main']['temp'] %><br>
-
-<%= @weather['weather'].first['description'] %>
+<% unless @weather.nil? %>
+<h3>Weather:</h3>
+  Temperature:
+  <%= @weather['main']['temp'] %><br>
+  <%= @weather['weather'].first['description'] %>
+<% else %>
+  <h3>There is no weather forecast for <%= params[:date] %>.</h3>
+<% end %>
 
 <% if @funerals.empty? %>
-  <h3>There are currently no funerals reserved for <%= params[:date] %></h3>
+  <h3>There are currently no funerals reserved for <%= params[:date] %>.</h3>
   You can <%= link_to 'create', new_funeral_path %> an appointment.
 <% else %>
   <table>

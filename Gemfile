@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'simple_calendar'
 gem 'open_weather'
 gem 'dotenv-rails'
+gem 'validates_overlap'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
